@@ -25,3 +25,11 @@ props: {
   }
 }
 ```
+
+## Demo of the widget in action
+
+<div id="cop-action-widget"></div>
+<script src='./cop-action-widget.js'></script>
+<script>
+  new ActWidget({target: document.getElementById("cop-action-widget")});
+</script>
