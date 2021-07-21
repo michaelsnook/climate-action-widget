@@ -8,7 +8,7 @@ export default {
 	output: {
 		format: 'iife',
 		name: 'ActWidget', // Name of the class we will call on the page
-		file: 'dist/cop-action-widget.js' // the file which we will include on the page
+		file: 'docs/example/cop-action-widget.js' // the file which we will include on the page
 	},
 	plugins: [
 		svelte({
