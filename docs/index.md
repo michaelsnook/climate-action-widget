@@ -10,6 +10,8 @@ In order to install the widget you need two things: a) insert a "target element"
 </script>
 ```
 
+See an [example page with embedded widget](./example/index.html).
+
 ## Theming your widget
 
 You can pass some theme properties into the widget like so:

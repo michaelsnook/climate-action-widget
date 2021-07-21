@@ -1,0 +1,46 @@
+<document html>
+<html>
+  <head>
+    <title>Hello world Svelte widget</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>A Heading</h1>
+      <h2>like on a real website</h2>
+    </header>
+    <main>
+      <div class="left-side">
+        <img src="./colors-overlaid.png" class="logo" />
+      </div>
+
+      <!-- this is where the action widget will go -->
+      <div class="pad right-side">
+        <strong style="color: pink;">The box right below this is the widget</strong>
+        <div class="pad" id="cop-action-widget"
+          style="border: 1px solid pink;"
+        ></div>
+      </div>
+
+    </main>
+    <footer>
+      <p>this footer for example purposees only</p>
+    </footer>
+  </body>
+
+  <script src='../../dist/cop-action-widget.js'></script>
+  <script>
+  new ActWidget({
+    target: document.getElementById("cop-action-widget"),
+    props: {
+      language: 'en',
+      //noStyles: true,
+      //noLayout: false,
+      theme: {
+      //  color: '#663399',
+      //  darkColor: 'darkGray'
+      }
+    }
+  });
+  </script>
+</html>
