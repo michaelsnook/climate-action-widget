@@ -19,7 +19,7 @@ Here's a live version of the widget below. You can use the menu to visit one
 of the country org's home pages.
 
 <div id="cop-action-widget"></div>
-<script src='./cop-action-widget.js'></script>
+<script src='./example/cop-action-widget.js'></script>
 <script>
   new ActWidget({
     target: document.getElementById("cop-action-widget")
