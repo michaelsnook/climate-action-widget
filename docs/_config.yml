@@ -1,1 +1,26 @@
+title: Glasgow Climate Action Widget
+email: "michael.snook@gmail.com"
+description: >-
+  This site documents the usage of the Climate Action Widget: how to
+  embed it in your site and how to theme it to match your own brand.
+baseurl: "/climate-action-widget" # the subpath of your site, e.g. /blog
+url: "https://michaelsnook.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: "michaelsnook"
+github_username: "michaelsnook"
+
+# Build settings
 theme: jekyll-theme-slate
+plugins:
+  - jekyll-feed
+
+exclude:
+ - .sass-cache/
+ - .jekyll-cache/
+ - gemfiles/
+ - Gemfile
+ - Gemfile.lock
+ - node_modules/
+ - vendor/bundle/
+ - vendor/cache/
+ - vendor/gems/
+ - vendor/ruby/
