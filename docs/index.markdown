@@ -27,7 +27,14 @@ of the country org's home pages.
 <script src='./example/cop-action-widget.js'></script>
 <script>
   new ActWidget({
-    target: document.getElementById("cop-action-widget")
+    target: document.getElementById("cop-action-widget"),
+    props: {
+      noLayout: false,
+      noStyles: false,
+      theme: {
+        mainColor: 'darkred'
+      }
+    }
   });
 </script>
 
@@ -45,15 +52,15 @@ new ActWidget({
   target: document.getElementById("cop-action-widget"),
   props: {
     theme: {
-      color: '#663399',
-      darkColor: 'darkGray'
+      mainColor: 'darkred',
+      darkColor: 'darkgray'
     }
   }
 });
 ```
 
 If you need more options than this, you can request themm by getting in touch with
-the developer (file an issue? email me. tweet [@michaelsnook](https://twitter.com/michaelsnook).
+the developer (file an issue? email me. tweet [@michaelsnook](https://twitter.com/michaelsnook)).
 Or you can write CSS on your own page to style the widget.
 All the elements have specific selectors that should make this easy to do.
 
@@ -62,13 +69,13 @@ All the elements have specific selectors that should make this easy to do.
   border-radius: 5px;
   border: 1px gray sold;
 }
-#cop-action-widget .button.button-solid {
+.cop-widget-inner .button.button-solid {
   background: orange;
 }
 ```
 
 In the example above, the button color would not take, because the
-widget's styles would be declared with more specificity, so to avoid over-using
+widget's styles are be declared more specifically, so to avoid over-using
 the `!important` directive you may prefer to disable the widget's styles.
 You can get rid of almost all of the widget's styles by passing
 `noStyles` and/or `noLayout` along with the theme property.
@@ -77,10 +84,8 @@ You can get rid of almost all of the widget's styles by passing
 new ActWidget({
   target: document.getElementById("cop-action-widget"),
   props: {
-    theme: {
-      noStyles: true,
-      noLayout: true
-    }
+    noStyles: true,
+    noLayout: true
   }
 });
 ```

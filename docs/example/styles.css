@@ -23,10 +23,6 @@ img {
   height: auto;
 }
 
-main { 
-  display: block; padding: 3rem 0; 
-}
-
 .logo {
   border-radius: 50%;
 }
@@ -35,17 +31,15 @@ main {
   padding: 2rem;
   width: 100%;
   display: block;
+  float: left;
+  width: 100%;
+  min-width: 300px;
 }
 
-@media screen and (min-width: 768px) {
-  .left-side {
-    width: 49%;
+@media screen and (min-width: 700px) {
+  .left-side, .right-side {
+    width: 50%;
     display: inline-block;
-  }
-
-  .right-side {
-    width: 49%;
-    float: right;
   }
 }
 
@@ -58,4 +52,37 @@ footer {
   background: #ccc;
   padding: 4rem 3rem;
   clear: both;
+}
+
+section.hero-section {
+  background-color: #663399;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.bg-white {
+  background: white;
+  padding: 3rem;
+}
+section.bg-white h2, section.bg-white h3 {
+  margin-bottom: 1rem;
+}
+section.bg-white h2 {
+  text-align: center;
+}
+div.section-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+div.card {
+  border: 1px #663399 solid;
+  border-radius: 3px;
+  padding: 2rem;
+  min-width: 220px;
+  max-width: 300px;
+}
+.card p {
+  margin-bottom: 0.6rem;
 }
