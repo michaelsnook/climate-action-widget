@@ -7,16 +7,15 @@ To install the widget you only need to do two things:
 
 ```html
 <div id="cop-action-widget"></div>
-<script src="link-to-the-cop-action-widget.js"></script>
+<script src="https://climate-action-widget.pages.dev/cop-widget.js"></script>
 <script>
   new ActWidget({target: document.getElementById("cop-action-widget")});
 </script>
 ```
 
-Keep in mind that the script source link in the code example here is a
-placeholder. For pre-launch testing purposes you can use
-`https://michaelsnook.github.io/climate-action-widget/example/cop-action-widget.js`,
-but this URL is subject to change and should not be relied upon for your public pages.
+Keep in mind that the script source link in the code example here is subject to
+change when we go live. For pre-launch testing purposes you can use
+`https://climate-action-widget.pages.dev/cop-widget.js`.
 
 ## Demo of the widget in action
 
@@ -24,7 +23,7 @@ Here's a live version of the widget below. You can use the menu to visit one
 of the country org's home pages.
 
 <div id="cop-action-widget"></div>
-<script src='./example/cop-action-widget.js'></script>
+<script src="https://climate-action-widget.pages.dev/cop-widget.js"></script>
 <script>
   new ActWidget({
     target: document.getElementById("cop-action-widget"),
