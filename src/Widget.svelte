@@ -3,51 +3,61 @@
   export let noStyles
   export let noLayout
   export let theme = {}
+  export let title = 'Get Involved'
+  export let subtitle = 'Defund Climate Chaos'
   let mainColor = theme.mainColor || '#663399'
   let darkColor = theme.darkColor || '#332e3c'
   let actionColor = theme.actionColor || '#bc4747'
   let coolColor = theme.coolColor || '#297373'
   let brightColor = theme.brightColor || '#ffe66d'
 
-  let view = 'initial'
+  export let view = 'initial'
+  let startingView = view
 </script>
 
-<section class="cop-widget-inner" style="
+<main class="cop-widget-inner" style="
   --main-color: {mainColor};
   --dark-color: {darkColor};
   --action-color: {actionColor};
   --cool-color: {coolColor};
   --bright-color: {brightColor};
 ">
-  <h1>Stop With</h1>
-  <h2>All This Climate Chaos</h2>
-  <main class="interactions">
-    {#if view === 'initial'}
-      <a href class="button button-solid" on:click|preventDefault={() => view = 'find-action'}>Find an action near you</a>
-      <a href class="button button-outline" on:click|preventDefault={() => view = 'join-group'}>Join a local group</a>
-      <a href class="button button-clear" on:click|preventDefault={() => view = 'organizer'}>Organizers, get in touch</a>
-    {:else if view === 'join-group'}
-      <CountryPicker type="join-group" />
-      <a href on:click|preventDefault={() => view = 'initial'}>&#171; go back</a>
-    {:else if view === 'find-action'}
-      <CountryPicker type="find-action" />
-      <a href on:click|preventDefault={() => view = 'initial'}>&#171; go back</a>
-    {:else if view === 'organizer'}
-      <p>cool just email us or sthg</p>
-      <a href on:click|preventDefault={() => view = 'initial'}>&#171; go back</a>
-    {/if}
-  </main>
-
-</section>
+  {#if title.length > 0}<h1>{title}</h1>{/if}
+  {#if subtitle.length > 0}<h2>{subtitle}</h2>{/if}
+  {#if view === 'initial'}
+    <a href class="button button-solid" on:click|preventDefault={() => view = 'find-action'}>Fnd an action near you</a>
+    <a href class="button button-outline" on:click|preventDefault={() => view = 'join-group'}>Join a local group</a>
+    <a href class="button button-clear" on:click|preventDefault={() => view = 'organizer'}>Organizers, get in touch</a>
+  {:else if view === 'join-group'}
+    <CountryPicker type="join-group" />
+  {:else if view === 'find-action'}
+    <CountryPicker type="find-action" />
+  {:else if view === 'organizer'}
+    <p>cool just email us or sthg</p>
+  {:else if view === 'search'}
+    <form method="GET" action="https://act.plannedparenthoodaction.org/local">
+      <label for="filter-location">Enter postcode / country</label>
+      <input id="filter-location" name="filter[location]" placeholder="1A1 E5E, Countryname" />
+    </form>
+  {/if}
+  {#if view !== startingView}
+    <a href class="link go-back" on:click|preventDefault={() => view = startingView}>
+      &#171; go back
+    </a>
+  {/if}
+</main>
 
 {#if !noLayout}
 <style>
-  section.cop-widget-inner {
+  main.cop-widget-inner {
     box-sizing: border-box;
     font-size: 16px;
     max-width: 400px;
     min-height: 300px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
   }
   .cop-widget-inner *,
   .cop-widget-inner *:before,
@@ -62,7 +72,8 @@
   .cop-widget-inner h6,
   .cop-widget-inner p,
   .cop-widget-inner ol,
-  .cop-widget-inner ul {
+  .cop-widget-inner ul,
+  .cop-widget-inner form {
     margin: 0;
     padding: 0;
   }
@@ -95,8 +106,8 @@
     display: block;
     padding: 0.5rem 0;
   }
-  .cop-widget-inner main.interactions {
-    padding: 2rem 0;
+  .cop-widget-inner form {
+    padding: 1rem 0;
   }
 </style>
 {/if}
