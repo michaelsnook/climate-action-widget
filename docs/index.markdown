@@ -30,12 +30,36 @@ of the country org's home pages.
     props: {
       noLayout: false,
       noStyles: false,
+      view: 'initial',
+      title: 'Get Involved',
+      subtitle: 'Defund Climate Chaos',
       theme: {
         mainColor: 'darkred'
       }
     }
   });
 </script>
+
+## Widget options
+
+The widget accepts a number of initialization options so you can customize it to your uses.
+You can set colors, change the title and subtitle (or disable them).
+
+```javascript
+new ActWidget({
+  target: document.getElementById("cop-action-widget"),
+  props: {
+    noLayout: false,
+    noStyles: false,
+    view: 'initial', // or: 'search' 'join-group' 'find-action' 'organizer'
+    title: 'Get Involved', // use empty string '' for no title
+    subtitle: 'Defund Climate Chaos', // use empty string '' for no subtitle
+    theme: {
+      mainColor: 'darkred'
+    }
+  }
+});
+```
 
 ## Theming your widget
 
