@@ -1,5 +1,7 @@
 <script>
   import CountryPicker from './CountryPicker.svelte'
+  import { _, addMessages, init, getLocaleFromNavigator } from 'svelte-i18n'
+
   export let noStyles
   export let noLayout
   export let theme = {}
@@ -13,6 +15,18 @@
 
   export let view = 'initial'
   let startingView = view
+
+  import en from './locales/en.json';
+  import enUS from './locales/en-US.json';
+  import enGB from './locales/en-GB.json';
+
+  addMessages('en', en);
+  addMessages('en-US', enUS);
+  addMessages('en-GB', enGB);
+  init({
+    fallbackLocale: 'en',
+    initialLocale: getLocaleFromNavigator(),
+  })
 </script>
 
 <main class="cop-widget-inner" style="
@@ -25,24 +39,30 @@
   {#if title.length > 0}<h1>{title}</h1>{/if}
   {#if subtitle.length > 0}<h2>{subtitle}</h2>{/if}
   {#if view === 'initial'}
-    <a href class="button button-solid" on:click|preventDefault={() => view = 'find-action'}>Fnd an action near you</a>
-    <a href class="button button-outline" on:click|preventDefault={() => view = 'join-group'}>Join a local group</a>
-    <a href class="button button-clear" on:click|preventDefault={() => view = 'organizer'}>Organizers, get in touch</a>
+    <a href class="button button-solid" on:click|preventDefault={() => view = 'find-action'}>
+      {$_('cta_find_action')}
+    </a>
+    <a href class="button button-outline" on:click|preventDefault={() => view = 'join-group'}>
+      {$_('cta_join_group')}
+    </a>
+    <a href class="button button-clear" on:click|preventDefault={() => view = 'organiser'}>
+      {$_('cta_organisers')}
+    </a>
   {:else if view === 'join-group'}
     <CountryPicker type="join-group" />
   {:else if view === 'find-action'}
     <CountryPicker type="find-action" />
-  {:else if view === 'organizer'}
-    <p>cool just email us or sthg</p>
+  {:else if view === 'organiser'}
+    <p>{$_('organiser_message')}</p>
   {:else if view === 'search'}
     <form method="GET" action="https://act.plannedparenthoodaction.org/local">
-      <label for="filter-location">Enter postcode / country</label>
-      <input id="filter-location" name="filter[location]" placeholder="1A1 E5E, Countryname" />
+      <label for="filter-location">{$_('label_postcode_country')}</label>
+      <input id="filter-location" name="filter[location]" placeholder={$_('placeholder_postcode_country')} />
     </form>
   {/if}
   {#if view !== startingView}
     <a href class="link go-back" on:click|preventDefault={() => view = startingView}>
-      &#171; go back
+      &#171; {$_('go_back')}
     </a>
   {/if}
 </main>

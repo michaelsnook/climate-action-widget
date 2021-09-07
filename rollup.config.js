@@ -2,6 +2,8 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import json from "@rollup/plugin-json";
+
 
 export default {
 	input: './src/Widget.svelte',
@@ -19,6 +21,7 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
-		terser()
+		terser(),
+		json()
 	]
 };
