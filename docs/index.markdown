@@ -42,8 +42,9 @@ of the country org's home pages.
 
 ## Widget options
 
-The widget accepts a number of initialization options so you can customize it to your uses.
-You can set colors, change the title and subtitle (or disable them).
+The widget accepts a number of initialization options so you can customize
+it to your needs. You can set colors, set the language change the title and
+subtitle (or disable them).
 
 ```javascript
 new ActWidget({
@@ -51,6 +52,7 @@ new ActWidget({
   props: {
     noLayout: false,
     noStyles: false,
+    locale: 'en', // if your locale is not supported, please get in touch
     view: 'initial', // or: 'search' 'join-group' 'find-action' 'organizer'
     title: 'Get Involved', // use empty string '' for no title
     subtitle: 'Defund Climate Chaos', // use empty string '' for no subtitle

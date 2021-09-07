@@ -15,5 +15,9 @@
   },
   "scripts": {
     "build": "rollup -c"
+  },
+  "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "svelte-i18n": "^3.3.10"
   }
 }
