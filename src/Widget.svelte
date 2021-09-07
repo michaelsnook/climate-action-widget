@@ -1,13 +1,15 @@
 <script>
   import CountryPicker from './CountryPicker.svelte'
-  import { _, addMessages, init, getLocaleFromNavigator } from 'svelte-i18n'
-
+  import { _ } from 'svelte-i18n'
+  import localeSetup from './i18n'
+  
   export let noStyles
   export let noLayout
   export let theme = {}
   export let title = 'Get Involved'
   export let subtitle = 'Defund Climate Chaos'
-  export let locale = getLocaleFromNavigator()
+  export let locale
+
   let mainColor = theme.mainColor || '#663399'
   let darkColor = theme.darkColor || '#332e3c'
   let actionColor = theme.actionColor || '#bc4747'
@@ -16,18 +18,8 @@
 
   export let view = 'initial'
   let startingView = view
+  localeSetup(locale)
 
-  import en from './locales/en.json';
-  import enUS from './locales/en-US.json';
-  import enGB from './locales/en-GB.json';
-
-  addMessages('en', en);
-  addMessages('en-US', enUS);
-  addMessages('en-GB', enGB);
-  init({
-    fallbackLocale: 'en',
-    initialLocale: locale,
-  })
 </script>
 
 <main class="cop-widget-inner" style="
