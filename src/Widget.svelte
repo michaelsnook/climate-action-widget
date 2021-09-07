@@ -10,11 +10,7 @@
   export let subtitle = 'Defund Climate Chaos'
   export let locale
 
-  let mainColor = theme.mainColor || '#663399'
-  let darkColor = theme.darkColor || '#332e3c'
-  let actionColor = theme.actionColor || '#bc4747'
-  let coolColor = theme.coolColor || '#297373'
-  let brightColor = theme.brightColor || '#ffe66d'
+  let mainColor = theme.mainColor || '#DD0000'
 
   export let view = 'initial'
   let startingView = view
@@ -22,13 +18,7 @@
 
 </script>
 
-<main class="cop-widget-inner" style="
-  --main-color: {mainColor};
-  --dark-color: {darkColor};
-  --action-color: {actionColor};
-  --cool-color: {coolColor};
-  --bright-color: {brightColor};
-">
+<main class="cop-widget-inner" style="--main-color: {mainColor};">
   {#if title.length > 0}<h1>{title}</h1>{/if}
   {#if subtitle.length > 0}<h2>{subtitle}</h2>{/if}
   {#if view === 'initial'}
