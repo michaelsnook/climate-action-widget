@@ -7,6 +7,7 @@
   export let theme = {}
   export let title = 'Get Involved'
   export let subtitle = 'Defund Climate Chaos'
+  export let locale = getLocaleFromNavigator()
   let mainColor = theme.mainColor || '#663399'
   let darkColor = theme.darkColor || '#332e3c'
   let actionColor = theme.actionColor || '#bc4747'
@@ -25,7 +26,7 @@
   addMessages('en-GB', enGB);
   init({
     fallbackLocale: 'en',
-    initialLocale: getLocaleFromNavigator(),
+    initialLocale: locale,
   })
 </script>
 
