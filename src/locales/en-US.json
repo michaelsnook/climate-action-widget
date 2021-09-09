@@ -1,5 +1,6 @@
 {
   "cta_organisers": "Organizers, get in touch!",
   "label_postcode_country": "Enter address or zip code",
-  "placeholder_postcode_country": "90210"
+  "placeholder_postcode_country": "90210",
+  "organiser_message": "If you're an organizer looking to join in with the DefundClimateChaos campaign for this year's COP, please email <a href=\"mailto:hello@defundclimatechaos.org\">hello@defundclimatechaos.org</a> and we'll be in touch."
 }

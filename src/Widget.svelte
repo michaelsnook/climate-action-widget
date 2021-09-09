@@ -36,7 +36,7 @@
   {:else if view === 'find-action'}
     <CountryPicker type="find-action" />
   {:else if view === 'organiser'}
-    <p>{$_('organiser_message')}</p>
+    <p class="p-organiser">{@html $_('organiser_message')}</p>
   {:else if view === 'search'}
     <form method="GET" action="https://act.plannedparenthoodaction.org/local">
       <label for="filter-location">{$_('label_postcode_country')}</label>
@@ -155,6 +155,10 @@
   }
   .cop-widget-inner a:hover {
     text-decoration: underline;
+  }
+  p.p-organiser {
+    line-height: 1.5rem;
+    margin: 1rem 0;
   }
 </style>
 {/if}
