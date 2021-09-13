@@ -1,7 +1,9 @@
 <script>
   let countries = [
-    ['USA', 'https://stopthemoneypipeline.com/'],
-    ['UK', 'https://tippingpointuk.org/' ],
+    ['France', 'https://350.org/fr'],
+    ['Germany', 'https://350.org/de'],
+    ['UK', 'https://defundclimatechaos.uk/'],
+    ['USA', 'https://fossilfreefuture.earth/'],
   ]
 
   let countrySelected
