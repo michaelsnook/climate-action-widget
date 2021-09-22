@@ -28,7 +28,10 @@
     <a href class="button button-outline" on:click|preventDefault={() => view = 'join-group'}>
       {$_('cta_join_group')}
     </a>
-    <a href class="button button-clear" on:click|preventDefault={() => view = 'organiser'}>
+    <a
+      href="https://bankonourfuture.org/defund-climate-chaos/resources/"
+      class="button button-clear"
+    >
       {$_('cta_organisers')}
     </a>
   {:else if view === 'join-group'}
