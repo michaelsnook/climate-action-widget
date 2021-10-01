@@ -1,7 +1,7 @@
 <script>
   let countries = [
     ['France', 'https://350.org/fr'],
-    ['Germany', 'https://350.org/de'],
+    ['Germany', 'https://urgewald.org/weltspartag'],
     ['UK', 'https://defundclimatechaos.uk/'],
     ['USA', 'https://fossilfreefuture.earth/'],
   ]
