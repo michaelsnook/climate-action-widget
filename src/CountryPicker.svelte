@@ -1,5 +1,6 @@
 <script>
   let countries = [
+    ['Canada', 'https://rbcrevealed.com/oct-29th-action-map/'],
     ['France', 'https://act.350.org/survey/day_of_action_oct_2021/'],
     ['Germany', 'https://urgewald.org/weltspartag'],
     ['UK', 'https://defundclimatechaos.uk/'],
